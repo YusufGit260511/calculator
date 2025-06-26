@@ -39,6 +39,40 @@ const App = () => {
         handleClick('=');
       } else if (e.key === 'Escape') {
         handleClick('C');
+      } else if (e.key === 'Backspace') {
+        setValue(prev => prev.slice(0, -1));
+      } else if (e.key === '+') {
+        handleClick('+');
+      } else if (e.key === '-') {
+        handleClick('-');
+      } else if (e.key === '*') {
+        handleClick('×');
+      } else if (e.key === '/') {
+        handleClick('÷');
+      } else if (e.key === '1') {
+        handleClick('1');
+      } else if (e.key === '2') {
+        handleClick('2');
+      } else if (e.key === '3') {
+        handleClick('3');
+      } else if (e.key === '4') {
+        handleClick('4');
+      } else if (e.key === '5') {
+        handleClick('5');
+      } else if (e.key === '6') {
+        handleClick('6');
+      } else if (e.key === '7') {
+        handleClick('7');
+      } else if (e.key === '8') {
+        handleClick('8');
+      } else if (e.key === '9') {
+        handleClick('9');
+      } else if (e.key === '0') {
+        handleClick('0');
+      } else if (e.key === '.') {
+        handleClick('.');
+      } else if (e.key === '(' || e.key === ')') {
+        handleClick('()');
       }
     };
 
@@ -89,7 +123,9 @@ const App = () => {
       setIsFinalAnswer(false);
     } else if (btnValue == '+/-') {
       setValue(prev => prev.includes('-') ? prev.replace('-', '') : `-${prev}`);
-    } else if (btnValue === '=') {
+    } else if (btnValue == '()') {
+      setValue(prev => prev.includes('(') ? prev + ')' : `${prev}(`);
+    }  else if (btnValue === '=') {
       try {
         const replaced = handlePercentage(
           value.replace(/÷/g, '/').replace(/×/g, '*')
@@ -151,7 +187,7 @@ const App = () => {
             src={backscape}
             alt="Backspace"
             className='cursor-pointer'
-            onClick={() => setValue((prev) => prev.slice(0, -1))}
+            onClick={() => setValue(prev => prev.slice(0, -1))}
           />
         </div>
 
