@@ -118,13 +118,13 @@ const App = () => {
 
   return (
     <div className='bg-[#151515]'>
-      <div className='w-[390px] h-[844px] bg-[#151515] rounded-[40px] mx-auto pt-[72px] px-[19px] pb-[42px] font-["Inter"]'>
+      <div className='w-[390px] h-[760px] bg-[#151515] rounded-[40px] mx-auto pt-[40px] px-[19px] pb-[42px] font-["Inter"]'>
         <input
           ref={inputRef}
           type="text"
           autoFocus
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          readOnly
           className={`
             w-full 
             h-[57px] 
@@ -142,7 +142,7 @@ const App = () => {
           `}
         />
 
-        <div className={`w-full h-[41px] mt-[88px] flex justify-end items-center ${isFinalAnswer ? 'text-white text-[68px]' : 'text-[#969696] text-[48px]'}`}>
+        <div className={`w-full h-[41px] mt-[40px] flex justify-end items-center ${isFinalAnswer ? 'text-white text-[68px]' : 'text-[#969696] text-[48px]'}`}>
           {answer}
         </div>
 
